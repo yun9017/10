@@ -11,19 +11,25 @@
 int main(void) {
     char input[100];
     FILE* fp;
-    int i;
+    char c;
     
-    //fopen
-    fp = fopen("/Users/hanseoyun/Desktop/programming/programming/10/10/sample.txt","w");
-    
-    for(i=0;i<3;i++)
+    fp = fopen("/Users/hanseoyun/Desktop/programming/programming/10/10/sample.txt","r");
+    if(fp == NULL)
     {
-        //fprintf
-        printf("input a word:");
-        scanf("%s", input); //문자 여러개 배열에 저장, &쓰지 않고 배열 이름 그대로
-        fprintf(fp,"%s\n",input);
+        printf("Failed to open file!\n");
+        return -1;
     }
-    //fclose
+#if 0
+    while((c = fgetc(fp)) != EOF)
+    {
+        putchar(c);
+    }
+#else
+    while(fgets(input, 100, fp) > 0)
+    {
+        printf("%s",input);
+    }
+#endif
     fclose(fp);
     
     return 0;
