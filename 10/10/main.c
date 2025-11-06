@@ -14,7 +14,7 @@ int main(void) {
     int i;
     
     //fopen
-    fp = fopen("sample.txt","w");
+    fp = fopen("/Users/hanseoyun/Desktop/programming/programming/10/10/sample.txt","w");
     
     for(i=0;i<3;i++)
     {
