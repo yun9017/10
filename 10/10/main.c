@@ -6,20 +6,13 @@
 //
 
 #include <stdio.h>
+#include <string.h>
 
-int main(void) {
-    int i = 0;
-    char str[4];
-    str[0] = 'a';
-    str[1] = 'b';
-    str[2] = 'c';
-    str[3] = '\0';
+void main(void) {
+    char src[] = "The worst things to eat before you sleep";
+    char dst[100];
     
-    printf("%s\n",str);
-    
-    while(str[i] != '\0'){
-        printf("%c",str[i]);
-        i++;
+    strcpy(dst, src);
+    printf("copied string:%s\n",dst);
     }
-    return 0;
-}
+
